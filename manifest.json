@@ -1,12 +1,25 @@
 {
   "name": "MetabolicOS",
   "short_name": "MetabolicOS",
-  "description": "A simple four-domain metabolic health operating system.",
-  "start_url": "./index.html",
+  "description": "A daily reflection app for metabolism, nutrition, movement, recovery, and body signals.",
+  "start_url": ".",
+  "scope": ".",
   "display": "standalone",
-  "background_color": "#08111f",
-  "theme_color": "#101827",
+  "orientation": "portrait",
+  "background_color": "#f6fbff",
+  "theme_color": "#08111f",
   "icons": [
-    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ]
 }
