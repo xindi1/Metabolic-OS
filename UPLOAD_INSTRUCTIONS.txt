@@ -1,0 +1,8 @@
+Upload every file in this zip to the ROOT of your Metabolic-OS GitHub repo and replace existing files.
+
+After GitHub Pages redeploys:
+1. On iPhone, delete the old Home Screen icon.
+2. Safari > xindi1.github.io/Metabolic-OS/ (or your exact GitHub Pages URL).
+3. Share > Add to Home Screen.
+
+If it still shows the old icon, go to Settings > Safari > Advanced > Website Data, search xindi1.github.io, delete the site data, then add again.

@@ -2,8 +2,8 @@
   "name": "MetabolicOS",
   "short_name": "MetabolicOS",
   "description": "A daily reflection app for metabolism, nutrition, movement, recovery, and body signals.",
-  "start_url": ".",
-  "scope": ".",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#f6fbff",
@@ -13,13 +13,13 @@
       "src": "icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
