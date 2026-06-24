@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#101827" />
+  <title>MetabolicOS</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">HealthOS Family</p>
+        <h1>MetabolicOS</h1>
+        <p class="subtitle">How healthy is my metabolism today?</p>
+      </div>
+      <button id="themeToggle" class="icon-button" aria-label="Toggle dark mode">☾</button>
+    </header>
+
+    <section class="score-card">
+      <div class="score-ring" aria-label="Daily metabolic score">
+        <span id="dailyScore">0</span>
+        <small>/100</small>
+      </div>
+      <div class="score-copy">
+        <p class="label">Today’s Metabolic Score</p>
+        <h2 id="scoreStatus">Start today’s check-in</h2>
+        <p id="scoreInsight">Complete the four domains to reveal your score.</p>
+      </div>
+    </section>
+
+    <section class="date-row">
+      <label for="entryDate">Entry date</label>
+      <input id="entryDate" type="date" />
+    </section>
+
+    <form id="entryForm" class="domain-grid">
+      <article class="domain-card" data-domain="nutrition">
+        <div class="domain-head">
+          <span class="domain-icon">🥗</span>
+          <div>
+            <h3>Nutrition</h3>
+            <p>Fuel, sequence, satiety.</p>
+          </div>
+        </div>
+        <input id="nutrition" type="range" min="0" max="25" value="0" />
+        <div class="domain-footer"><span>Low</span><strong id="nutritionValue">0</strong><span>Strong</span></div>
+        <textarea id="nutritionNote" rows="2" placeholder="Example: beans first, low sugar, steady hunger"></textarea>
+      </article>
+
+      <article class="domain-card" data-domain="movement">
+        <div class="domain-head">
+          <span class="domain-icon">🚶</span>
+          <div>
+            <h3>Movement</h3>
+            <p>Walks, lifting, sprints.</p>
+          </div>
+        </div>
+        <input id="movement" type="range" min="0" max="25" value="0" />
+        <div class="domain-footer"><span>Low</span><strong id="movementValue">0</strong><span>Strong</span></div>
+        <textarea id="movementNote" rows="2" placeholder="Example: post-meal walk, field sprints, strength"></textarea>
+      </article>
+
+      <article class="domain-card" data-domain="recovery">
+        <div class="domain-head">
+          <span class="domain-icon">🌙</span>
+          <div>
+            <h3>Recovery</h3>
+            <p>Sleep, stress, reset.</p>
+          </div>
+        </div>
+        <input id="recovery" type="range" min="0" max="25" value="0" />
+        <div class="domain-footer"><span>Low</span><strong id="recoveryValue">0</strong><span>Strong</span></div>
+        <textarea id="recoveryNote" rows="2" placeholder="Example: slept well, low stress, magnesium"></textarea>
+      </article>
+
+      <article class="domain-card" data-domain="signals">
+        <div class="domain-head">
+          <span class="domain-icon">📈</span>
+          <div>
+            <h3>Body Signals</h3>
+            <p>Energy, hunger, weight.</p>
+          </div>
+        </div>
+        <input id="signals" type="range" min="0" max="25" value="0" />
+        <div class="domain-footer"><span>Low</span><strong id="signalsValue">0</strong><span>Strong</span></div>
+        <textarea id="signalsNote" rows="2" placeholder="Example: stable energy, low cravings, light body"></textarea>
+      </article>
+    </form>
+
+    <section class="quick-inputs">
+      <h2>Optional metrics</h2>
+      <div class="metric-grid">
+        <label>Weight<input id="weight" type="number" step="0.1" placeholder="lbs" /></label>
+        <label>Waist<input id="waist" type="number" step="0.1" placeholder="in" /></label>
+        <label>Energy<input id="energy" type="number" min="1" max="10" placeholder="1-10" /></label>
+        <label>Cravings<input id="cravings" type="number" min="1" max="10" placeholder="1-10" /></label>
+      </div>
+      <textarea id="dailyNote" rows="3" placeholder="Daily reflection: What helped or hurt your metabolism today?"></textarea>
+    </section>
+
+    <section class="actions">
+      <button id="saveEntry" class="primary" type="button">Save Today</button>
+      <button id="resetEntry" class="secondary" type="button">Reset</button>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Trend</p>
+          <h2>7-day view</h2>
+        </div>
+        <span id="streakBadge" class="badge">0 day streak</span>
+      </div>
+      <div id="trendBars" class="trend-bars"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">History</p>
+          <h2>Recent entries</h2>
+        </div>
+      </div>
+      <div id="historyList" class="history-list"></div>
+    </section>
+
+    <section class="actions utility-actions">
+      <button id="exportData" class="secondary" type="button">Export JSON</button>
+      <label class="import-label">Import JSON<input id="importData" type="file" accept="application/json" /></label>
+      <button id="clearData" class="danger" type="button">Clear Data</button>
+    </section>
+
+    <footer>
+      <strong>MetabolicOS</strong> · A HealthOS Family prototype · Local-first data
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
